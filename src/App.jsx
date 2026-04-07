@@ -14,6 +14,13 @@ function App() {
       <p>Sveiki atvykę į savo sveikatos valdymo sistemą.</p>
       <MeasurementForm onAdd={addRecord} />
       {/* Čia vėliau atsiras mūsų komponentai */}
+      <ul>
+        {records.map((item, index) => (
+          <li key={index}>
+            {item.systolic} / {item.diastolic} - Pulsas: {item.pulse}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

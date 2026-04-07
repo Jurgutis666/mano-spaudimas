@@ -11,9 +11,9 @@ function MeasurementForm({ onAdd }) {
   function handleSubmit(e) {
     e.preventDefault();
     const newRecord = {
-      systolic,
-      diastolic,
-      pulse,
+      systolic: Number(systolic),
+      diastolic: Number(diastolic),
+      pulse: Number(pulse),
     };
     console.log(newRecord);
     onAdd(newRecord);
