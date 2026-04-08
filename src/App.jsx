@@ -1,6 +1,7 @@
 import MeasurementForm from "./components/MeasurementForm";
 import "./index.css";
 import { useState } from "react";
+import MeasurementList from "./components/MeasurementList";
 
 function App() {
   const [records, setRecords] = useState([]);
@@ -13,14 +14,8 @@ function App() {
       <h1>Kraujospūdžio Seklys</h1>
       <p>Sveiki atvykę į savo sveikatos valdymo sistemą.</p>
       <MeasurementForm onAdd={addRecord} />
+      <MeasurementList records={records} />
       {/* Čia vėliau atsiras mūsų komponentai */}
-      <ul>
-        {records.map((item, index) => (
-          <li key={index}>
-            {item.systolic} / {item.diastolic} - Pulsas: {item.pulse}
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }
