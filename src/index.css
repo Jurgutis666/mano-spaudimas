@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f4f7f6;
+  font-family: system-ui, sans-serif;
+}
+
+.app-container {
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.measurement-form {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-input {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.submit-button {
+  background-color: #27ae60;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 15px;
+  border-radius: 8px;
+  border: none;
+}
+
+.measurement-form h2 {
+  margin-top: 0;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.measurements-list-container {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.measurement-card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 5px solid #0f89da;
+}
+
+.pressure-value {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.pulse-value {
+  font-size: 14px;
+  color: #7f8c8d;
+}

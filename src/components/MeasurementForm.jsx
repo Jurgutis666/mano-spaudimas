@@ -25,10 +25,11 @@ function MeasurementForm({ onAdd }) {
 
   return (
     // 3. Čia bus tavo HTML (forma, laukeliai, mygtukas)
-    <form onSubmit={handleSubmit}>
+    <form className="measurement-form" onSubmit={handleSubmit}>
       <h2>Naujas Matavimas</h2>
 
       <input
+        className="form-input"
         type="number"
         placeholder="Sistolinis"
         value={systolic}
@@ -36,6 +37,7 @@ function MeasurementForm({ onAdd }) {
       />
 
       <input
+        className="form-input"
         type="number"
         placeholder="Diastolinis"
         value={diastolic}
@@ -43,12 +45,15 @@ function MeasurementForm({ onAdd }) {
       />
 
       <input
+        className="form-input"
         type="number"
         placeholder="Pulsas"
         value={pulse}
         onChange={(e) => setPulse(e.target.value)}
       />
-      <button type="submit">Išsaugoti</button>
+      <button className="submit-button" type="submit">
+        Išsaugoti
+      </button>
     </form>
   );
 }
