@@ -5,28 +5,51 @@ function MeasurementForm({ onAdd }) {
   const [systolic, setSystolic] = useState("");
   const [diastolic, setDiastolic] = useState("");
   const [pulse, setPulse] = useState("");
-
-  // 2. Čia bus "handleSubmit" (veiksmas paspaudus mygtuką)
+  const [isNow, setIsNow] = useState(true);
+  const [manualDate, setManualDate] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    const finalDate = isNow ? new Date().toLocaleString() : manualDate;
+
     const newRecord = {
       systolic: Number(systolic),
       diastolic: Number(diastolic),
       pulse: Number(pulse),
+      date: finalDate,
     };
-    console.log(newRecord);
+
     onAdd(newRecord);
 
     setSystolic("");
     setDiastolic("");
     setPulse("");
+    setManualDate("");
   }
 
   return (
-    // 3. Čia bus tavo HTML (forma, laukeliai, mygtukas)
     <form className="measurement-form" onSubmit={handleSubmit}>
       <h2>Naujas Matavimas</h2>
+
+      <div className="date-selection-container">
+        <label>
+          <input
+            type="checkbox"
+            checked={isNow}
+            onChange={(e) => setIsNow(e.target.checked)}
+          />{" "}
+          Matuoju dabar
+        </label>
+        {!isNow && (
+          <input
+            type="datetime-local"
+            className="form-input"
+            value={manualDate}
+            onChange={(e) => setManualDate(e.target.value)}
+          />
+        )}
+      </div>
 
       <input
         className="form-input"

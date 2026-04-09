@@ -84,3 +84,33 @@ body {
   font-size: 14px;
   color: #7f8c8d;
 }
+
+.pressure-section,
+.pulse-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pulse-section {
+  align-items: flex-end;
+}
+
+.value-group {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.unit-label {
+  font-size: 12px;
+  color: #7f8c8d;
+}
+
+.pressure-label,
+.pulse-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #95a5a6;
+}
