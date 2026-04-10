@@ -58,9 +58,10 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
+  gap: 10px;
+
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
 .measurement-card {
@@ -68,10 +69,16 @@ body {
   padding: 15px;
   border-radius: 10px;
   border: 1px solid #eee;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   border-left: 5px solid #0f89da;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.measurement-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .pressure-value {
@@ -81,8 +88,8 @@ body {
 }
 
 .pulse-value {
-  font-size: 14px;
-  color: #7f8c8d;
+  font-size: 20px;
+  color: #2c3e50;
 }
 
 .pressure-section,
@@ -112,5 +119,28 @@ body {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: #95a5a6;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.measurement-date-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 12px;
+  border-bottom: 1px dashed #eee;
+  padding-bottom: 8px;
+}
+
+.date-part {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  font-weight: bold;
+}
+
+.time-part {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #7f8c8d;
 }

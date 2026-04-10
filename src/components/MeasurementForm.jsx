@@ -11,7 +11,16 @@ function MeasurementForm({ onAdd }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    const finalDate = isNow ? new Date().toLocaleString() : manualDate;
+    const rawDate = isNow ? new Date() : new Date(manualDate);
+
+    const finalDate = rawDate.toLocaleString("lt-LT", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    });
 
     const newRecord = {
       systolic: Number(systolic),
