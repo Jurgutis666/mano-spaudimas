@@ -63,6 +63,8 @@ function MeasurementForm({ onAdd }) {
       <input
         className="form-input"
         type="number"
+        min={40}
+        max={300}
         placeholder="Sistolinis"
         value={systolic}
         onChange={(e) => setSystolic(e.target.value)}
@@ -71,6 +73,8 @@ function MeasurementForm({ onAdd }) {
       <input
         className="form-input"
         type="number"
+        min={20}
+        max={200}
         placeholder="Diastolinis"
         value={diastolic}
         onChange={(e) => setDiastolic(e.target.value)}
@@ -79,6 +83,8 @@ function MeasurementForm({ onAdd }) {
       <input
         className="form-input"
         type="number"
+        min={20}
+        max={250}
         placeholder="Pulsas"
         value={pulse}
         onChange={(e) => setPulse(e.target.value)}

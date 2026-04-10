@@ -1,9 +1,30 @@
+function getCollor(systolic) {
+  let collor = " ";
+
+  if (systolic < 90) {
+    collor = "blue";
+  } else if (systolic >= 90 && systolic <= 129) {
+    collor = "green";
+  } else if (systolic >= 130 && systolic <= 139) {
+    collor = "yellow";
+  } else if (systolic >= 140 && systolic <= 179) {
+    collor = "orange";
+  } else {
+    collor = "red";
+  }
+  return collor;
+}
+
 function MeasurementList({ records }) {
   return (
     <div>
       <ul className="measurements-list-container">
         {[...records].reverse().map((item, index) => (
-          <li className="measurement-card" key={index}>
+          <li
+            className="measurement-card"
+            key={index}
+            style={{ borderLeft: `5px solid ${getCollor(item.systolic)}` }}
+          >
             <div className="measurement-date-time">
               <span className="date-part">
                 {item.date
@@ -19,7 +40,10 @@ function MeasurementList({ records }) {
               <div className="pressure-section">
                 <span className="pressure-label">Spaudimas: </span>
                 <div className="value-group">
-                  <strong className="pressure-value">
+                  <strong
+                    className="pressure-value"
+                    style={{ color: `${getCollor(item.systolic)}` }}
+                  >
                     {item.systolic} / {item.diastolic}
                   </strong>
                   <span className="unit-label"> mmHg</span>
